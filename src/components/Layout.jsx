@@ -1,6 +1,6 @@
 import Link from "next/link"; 
 
-export default function Layout() {
+export default function Layout( {children} ) {
     return <>
         <header>
             <h1>Petshop</h1>
@@ -11,5 +11,6 @@ export default function Layout() {
                 <Link href="/contato">Contato</Link>
             </nav>
         </header>
+        <main>{children}</main>
     </>
 }
