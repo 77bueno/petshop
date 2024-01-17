@@ -6,6 +6,5 @@ export default function Layout( {children} ) {
             <h1>Petshop</h1>
             <Menu />
         </header>
-        <main className="limitador">{children}</main>
     </>
 }
