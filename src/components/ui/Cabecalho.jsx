@@ -35,4 +35,20 @@ const StyledHeader = styled.header`
         justify-content: center;
         align-items: center;
     }
+
+    img {
+        margin: 0%.5rem;
+    }
+
+    div {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        padding-bottom: 1rem;
+    }
+
+    h1 a:hover, h1 a:focus {
+        color: var(--cor-secundaria-hover);
+    }
 `;
