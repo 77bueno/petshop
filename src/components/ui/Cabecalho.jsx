@@ -35,6 +35,7 @@ const StyledHeader = styled.header`
         justify-content: center;
         align-items: center;
     }
+    
 
     img {
         margin: 0%.5rem;
@@ -55,7 +56,7 @@ const StyledHeader = styled.header`
     @media screen and (min-width: 700px) {
     div {
         flex-direction: row;
-        
+        justify-content: space-between;
     }
 
     h1 a {
