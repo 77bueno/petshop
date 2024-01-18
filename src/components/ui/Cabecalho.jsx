@@ -51,4 +51,15 @@ const StyledHeader = styled.header`
     h1 a:hover, h1 a:focus {
         color: var(--cor-secundaria-hover);
     }
+
+    @media screen and (min-width: 700px) {
+    div {
+        flex-direction: row;
+        
+    }
+
+    h1 a {
+        font-size: 2rem;
+    }
+  }
 `;
