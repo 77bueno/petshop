@@ -49,7 +49,7 @@ const StyledNav = styled.nav`
     }
 
     a.ativo {
-        background-color: red;
+        background-color: #181772;
         color: white;
     }
 `;
