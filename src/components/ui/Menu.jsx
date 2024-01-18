@@ -1,7 +1,7 @@
 import Link from "next/link"; 
 import styled from "styled-components";
 
-export default function Layout() {
+export default function Menu() {
     return <>
             <StyledNav>
                 <Link href="/">Blog</Link>

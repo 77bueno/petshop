@@ -3,17 +3,19 @@ import Link from "next/link";
 import Image from "next/image"; 
 import styled from "styled-components";
 
-export default function Layout( {children} ) {
+export default function Cabecalho() {
     return <>
         <StyledHeader>
-            <h1>
-                <Link href='/'>
-                    <Image src='/images/logo.png' width={48} height={48}
-                    alt='Patinha dentro de um coração' />
-                    Petshop
-                </Link>
-            </h1>
-            <Menu />
+            <div className="limitador">
+                <h1>
+                    <Link href='/'>
+                        <Image src='/images/logo.png' width={48} height={48}
+                        alt='Patinha dentro de um coração' />
+                        Petshop
+                    </Link>
+                </h1>
+                <Menu />
+            </div>
         </StyledHeader>
     </>
 }
