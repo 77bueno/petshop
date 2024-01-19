@@ -27,6 +27,20 @@ export default function Home() {
             <p>Subtitulo...</p>
             </Link>
           </article>
+
+          <article>
+            <Link href="">
+            <h3>Titulo...</h3>
+            <p>Subtitulo...</p>
+            </Link>
+          </article>
+
+          <article>
+            <Link href="">
+            <h3>Titulo...</h3>
+            <p>Subtitulo...</p>
+            </Link>
+          </article>
         </Styledlistaposts>
 
 
@@ -58,6 +72,16 @@ const Styledlistaposts = styled.div`
   article:hover {
     cursor: pointer;
     transform: scale(1.05);
+  }
+
+  @media screen and (min-width: 500px) {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+    article {
+      width: 49%;
+    }
   }
 `;
 
