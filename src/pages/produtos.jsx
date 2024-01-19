@@ -18,12 +18,12 @@ export default function Produtos() {
         </article>
 
         <article>
-          <h3>Castração</h3>
+          <h3>Tosa</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure suscipit laborum aperiam eos dolor, temporibus maxime ad soluta hic perferendis alias consequuntur illo obcaecati ipsam ea illum laudantium laboriosam ab.</p>
         </article>
 
         <article>
-          <h3>Tosa</h3>
+          <h3>Castração</h3>
           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure suscipit laborum aperiam eos dolor, temporibus maxime ad soluta hic perferendis alias consequuntur illo obcaecati ipsam ea illum laudantium laboriosam ab.</p>
         </article>
       </StyledProdutos>
