@@ -16,17 +16,17 @@ export default function Contato() {
         <Container>
           <form action="" method="post">
             <div>
-              <label htmlFor="nome">Nome: </label>
+              <label htmlFor="nome"><b>Nome:</b> </label>
               <input type="text" name="nome" id="nome" />
             </div>
 
             <div>
-              <label htmlFor="email">Email: </label>
+              <label htmlFor="email"><b>Email:</b> </label>
               <input type="text" name="email" id="email" />
             </div>
 
             <div>
-              <label htmlFor="mensagem">Mensagem: </label>
+              <label htmlFor="mensagem"><b>Mensagem:</b> </label>
               <textarea 
                 type="text" 
                 name="mensagem" 
@@ -48,7 +48,35 @@ export default function Contato() {
 }
 
 const StyledContato = styled.section`
-  h2::before{
+  h2::before {
     content: "💌 ";
+  }
+
+  form input, textarea {
+    width: 70%;
+    border: none;
+    box-shadow: var(--sombra-box);
+    padding: 0.5rem;
+    margin: 0 0 1rem 0;
+  }
+  
+  form label {
+    font-weight: bold;
+    width: 30%;
+    display: flex;
+    align-items: center;
+  }
+
+  form div {
+    display: flex;
+  }
+
+  button {
+    background-color: var(--cor-primaria-fundo);
+    color: var(--cor-primaria);
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    font-weight: bold;
   }
 `;
