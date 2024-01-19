@@ -38,4 +38,17 @@ const StyledProdutos = styled.section`
   h2::before{
     content: "🎁 ";
   }
+
+  article {
+    padding: 1rem;
+  }
+
+  @media screen and (min-width: 800px ) {
+    /* Esta div é o StyledContainer, mas com uma formatação 
+    que só vale pra essa página (página produtos) */
+    div {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 `;
