@@ -47,13 +47,13 @@ const Styledlistaposts = styled.div`
     & a {
       text-decoration: none;
       color: black;
-    }
 
     &:hover, 
     &:focus {
       color: #0066ff;
     }
   }
+}
 
   article:hover {
     cursor: pointer;
