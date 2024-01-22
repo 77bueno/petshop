@@ -2,6 +2,11 @@ import styled from "styled-components";
 import Link from "next/link"; 
 
 export default function ListaPosts( {posts} ) {
+    /* Se não houver posts ( ou seja, posts será vazio/zerado ),
+    em vez de retornar artigos com o map, retorne uma mensagem provisória para o usuário. */
+    if( posts.length === 0 ) 
+        return <h3>Ainda não há posts!</h3>;
+    
     return (
         <Styledlistaposts>
         
