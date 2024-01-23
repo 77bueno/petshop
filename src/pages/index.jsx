@@ -2,6 +2,7 @@ import Head from "next/head";
 import styled from "styled-components";
 import ListaPosts from "@/components/ListaPosts";
 import { useState } from "react";
+import serverApi from "./api/server";
 
   /* Função getStaticProps
   Utilizado para execução de código server-side (neste caso, fetch na API)
@@ -10,7 +11,7 @@ import { useState } from "react";
     console.log("Código de servidor (não aparece no cliente)...");
 
     try {
-      const resposta = await fetch(`http://10.20.46.27:2112/posts`);
+      const resposta = await fetch(`${serverApi}/posts`);
       const dados = await resposta.json();
 
       if (!resposta.ok) {
