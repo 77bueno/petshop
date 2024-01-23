@@ -1,10 +1,27 @@
 import  Head  from "next/head";
 import styled from "styled-components";
 import Container from "@/components/ui/Container";
+import serverApi from "../api/server";
 
 export async function getStaticProps( {params} ){
     const { id } = params;
     console.log(id);
+
+    try {
+        const resposta = await fetch(`${serverApi}/posts/${id}`);
+        if (!resposta.ok) {
+            throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`)
+          }
+
+        const dados = await resposta.json();
+        return {
+            props: {
+                post: dados
+            }
+        }
+    } catch (error) {
+        console.error("Erro ruim: "+error.message);
+    }
 }
 
 export async function getStaticPaths(){
