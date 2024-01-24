@@ -39,16 +39,16 @@ export default function Home({posts, categorias}) {
   console.log(categorias);
   const [listaDePosts, setListaDePosts] = useState(posts);
   const [categoria, setCategoria] = useState(null);
-
+ 
   const aplicarPost = (event) => {
     const categoriaEscolhida = event.currentTarget.innerText;
+    
     const cursosFiltrados = categoriaEscolhida ? posts.filter( post => post.categoria === categoriaEscolhida ) : posts;
 
     setListaDePosts(cursosFiltrados);
     setCategoria(categoriaEscolhida);
   }
   
-
   return (
     <>
       <Head>
@@ -64,7 +64,7 @@ export default function Home({posts, categorias}) {
 
         <StyledCategorias>
           {categorias.map((categoria, indice) => {
-            return <button onClick={aplicarPost} key={indice}>{categoria}</button>
+            return <button onClick={aplicarPost} key={indice}>{categoria}</button> 
           })}
         </StyledCategorias>
 
