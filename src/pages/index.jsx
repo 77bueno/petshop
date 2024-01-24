@@ -39,9 +39,15 @@ export default function Home({posts, categorias}) {
   const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.textContent;
     const novaListaDePosts = posts.filter( post => post.categoria === categoriaEscolhida );
+    setFiltroAtivo(true);
     setListaDePosts(novaListaDePosts);
   }
   
+  const limparFiltro = () => {
+    setFiltroAtivo(false);
+    setListaDePosts(posts);
+  }
+
   return (
     <>
       <Head>
@@ -59,7 +65,7 @@ export default function Home({posts, categorias}) {
           {categorias.map((categoria, indice) => {
             return <button onClick={filtrar} key={indice}>{categoria}</button> 
           })}
-          { filtroAtivo && <button className="limpar">Limpar Filtro</button>}
+          { filtroAtivo && <button onClick={limparFiltro} className="limpar">Limpar Filtro</button>}
         </StyledCategorias>
 
         <ListaPosts posts={listaDePosts} />
