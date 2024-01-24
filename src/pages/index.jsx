@@ -15,10 +15,7 @@ import serverApi from "./api/server";
         throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`)
       }
 
-      /* Extraindo as categorias dos posts para um novo array */
       const categorias = dados.map( post => post.categoria  )
-
-      /* Gerando um array de categorias ÚNICAS */
       const categoriasUnicas = [...new Set(categorias)];
 
       return { 
@@ -41,9 +38,7 @@ export default function Home({posts, categorias}) {
  
   const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.textContent;
-    
     const novaListaDePosts = posts.filter( post => post.categoria === categoriaEscolhida );
-
     setListaDePosts(novaListaDePosts);
   }
   
@@ -64,6 +59,7 @@ export default function Home({posts, categorias}) {
           {categorias.map((categoria, indice) => {
             return <button onClick={filtrar} key={indice}>{categoria}</button> 
           })}
+          <button className="limpar">Limpar Filtro</button>
         </StyledCategorias>
 
         <ListaPosts posts={listaDePosts} />
@@ -87,6 +83,18 @@ const StyledCategorias = styled.div`
     padding: 15px;
     border-radius: 6px;
     text-transform: capitalize;
+  }
+
+  .limpar {
+    background-color: gray;
+
+    &:hover {
+      background-color: slategray;
+    }
+
+    &::before {
+      content: "🧹 ";
+    }
   }
 `;
 
