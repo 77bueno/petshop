@@ -9,6 +9,7 @@ export async function getStaticProps( {params} ){
 
     try {
         const resposta = await fetch(`${serverApi}/posts/${id}`);
+        
         if (!resposta.ok) {
             throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`)
           }
@@ -31,19 +32,20 @@ export async function getStaticPaths(){
     }
 }
 
-export default function Post(){
+export default function Post({post}){
+  const tituloPagina = `${post.titulo} - Petshop`;
   return (
     <>
       <Head>
-       <title>Título do post... - Petshop</title>
-       <meta name="description" content="Descricao do post" />
+       <title> {tituloPagina} </title>
+       <meta name="description" content={post.descricao} />
       </Head>
 
       <StyledPost>
-        <h2>Titulo do Post...</h2>
+        <h2>{post.titulo}</h2>
         <Container>
-            <h3>Categoria do Post...</h3>
-            <p>Descrição do Post</p>
+            <h3>{post.categoria}</h3>
+            <p>{post.descricao}</p>
         </Container>
       </StyledPost>
    </>
