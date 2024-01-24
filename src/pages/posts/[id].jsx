@@ -4,6 +4,11 @@ import Container from "@/components/ui/Container";
 import serverApi from "../api/server";
 
 export async function getStaticProps( {params} ){
+    /* Utilizamos a prop params do getStaticProps
+    para poder ter acesso aos parâmetros dinâmicos da rota
+    configurada nos links da Lista de Posts. Usamos a 
+    desestruturação parar obter de forma direta o parâmetro
+    chamado "id". */
     const { id } = params;
     console.log(id);
 
@@ -28,9 +33,19 @@ export async function getStaticProps( {params} ){
     }
 }
 
+/* getStaticPaths é obrigatória quando se trata
+de trabalhar com páginas/rotas dinâmicas, ou seja, que
+dependem de parâmetros para serem construídas. */
 export async function getStaticPaths(){
     return {
+        /* paths fica vazio pois todos os caminhos devem ser
+        gerados sob demanda, ou seja, no momento em que a 
+        página for aberta. */
         paths: [],
+        
+        /* paths fica vazio pois todos os caminhos devem ser
+        gerados sob demanda, ou seja, no momento em que a 
+        página for aberta. */
         fallback: "blocking"
     }
 }
