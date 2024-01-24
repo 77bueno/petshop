@@ -38,6 +38,16 @@ import serverApi from "./api/server";
 export default function Home({posts, categorias}) {
   console.log(categorias);
   const [listaDePosts, setListaDePosts] = useState(posts);
+  const [categoria, setCategoria] = useState(null);
+
+  const aplicarPost = (event) => {
+    const categoriaEscolhida = event.currentTarget.innerText;
+    const cursosFiltrados = categoriaEscolhida ? posts.filter( post => post.categoria === categoriaEscolhida ) : posts;
+
+    setListaDePosts(cursosFiltrados);
+    setCategoria(categoriaEscolhida);
+  }
+  
 
   return (
     <>
@@ -52,17 +62,31 @@ export default function Home({posts, categorias}) {
       <StyledHome>
         <h2>Pet Notícias</h2>
 
-        <div>
+        <StyledCategorias>
           {categorias.map((categoria, indice) => {
-            return <button key={indice}>{categoria} - {indice} </button>
+            return <button onClick={aplicarPost} key={indice}>{categoria}</button>
           })}
-        </div>
+        </StyledCategorias>
 
         <ListaPosts posts={listaDePosts} />
       </StyledHome>
     </>
   );
 }
+
+const StyledCategorias = styled.section`
+  button {
+    background-color: #181772;
+    color: white;
+    text-shadow: black 1px 1px 1px;
+    font-weight: bold;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    margin: 1rem 2rem 1rem 2rem;
+    flex-wrap: wrap ;
+  }
+`;
 
 const StyledHome = styled.section`
   h2::before {
