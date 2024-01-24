@@ -40,7 +40,7 @@ export default function Home({posts, categorias}) {
   const [listaDePosts, setListaDePosts] = useState(posts);
  
   const filtrar = (event) => {
-    const categoriaEscolhida = event.currentTarget.innerText;
+    const categoriaEscolhida = event.currentTarget.textContent;
     
     const novaListaDePosts = posts.filter( post => post.categoria === categoriaEscolhida );
 
@@ -72,7 +72,12 @@ export default function Home({posts, categorias}) {
   );
 }
 
-const StyledCategorias = styled.section`
+const StyledCategorias = styled.div`
+  display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 1rem 0;
+    flex-wrap: wrap ;
   button {
     background-color: #181772;
     color: white;
@@ -81,8 +86,7 @@ const StyledCategorias = styled.section`
     border: none;
     padding: 15px;
     border-radius: 6px;
-    margin: 1rem 2rem 1rem 2rem;
-    flex-wrap: wrap ;
+    text-transform: capitalize;
   }
 `;
 
