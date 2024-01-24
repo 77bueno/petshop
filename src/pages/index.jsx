@@ -38,15 +38,13 @@ import serverApi from "./api/server";
 export default function Home({posts, categorias}) {
   console.log(categorias);
   const [listaDePosts, setListaDePosts] = useState(posts);
-  const [categoria, setCategoria] = useState(null);
  
-  const aplicarPost = (event) => {
+  const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.innerText;
     
-    const cursosFiltrados = categoriaEscolhida ? posts.filter( post => post.categoria === categoriaEscolhida ) : posts;
+    const novaListaDePosts = posts.filter( post => post.categoria === categoriaEscolhida );
 
-    setListaDePosts(cursosFiltrados);
-    setCategoria(categoriaEscolhida);
+    setListaDePosts(novaListaDePosts);
   }
   
   return (
@@ -64,7 +62,7 @@ export default function Home({posts, categorias}) {
 
         <StyledCategorias>
           {categorias.map((categoria, indice) => {
-            return <button onClick={aplicarPost} key={indice}>{categoria}</button> 
+            return <button onClick={filtrar} key={indice}>{categoria}</button> 
           })}
         </StyledCategorias>
 
