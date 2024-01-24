@@ -22,6 +22,9 @@ export async function getStaticProps( {params} ){
         }
     } catch (error) {
         console.error("Erro ruim: "+error.message);
+        return {
+            notFound: true
+        }
     }
 }
 

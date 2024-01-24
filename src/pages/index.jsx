@@ -29,6 +29,9 @@ import serverApi from "./api/server";
       }
     } catch (error) {
       console.error("Deu ruim: "+error.message);
+      return {
+        notFound: true
+      }
     }
   }
 
