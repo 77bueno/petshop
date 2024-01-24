@@ -33,8 +33,8 @@ import serverApi from "./api/server";
   }
 
 export default function Home({posts, categorias}) {
-  console.log(categorias);
   const [listaDePosts, setListaDePosts] = useState(posts);
+  const [filtroAtivo, setFiltroAtivo] = useState(false);
  
   const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.textContent;
@@ -59,7 +59,7 @@ export default function Home({posts, categorias}) {
           {categorias.map((categoria, indice) => {
             return <button onClick={filtrar} key={indice}>{categoria}</button> 
           })}
-          <button className="limpar">Limpar Filtro</button>
+          { filtroAtivo && <button className="limpar">Limpar Filtro</button>}
         </StyledCategorias>
 
         <ListaPosts posts={listaDePosts} />
