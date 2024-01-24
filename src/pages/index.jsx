@@ -15,9 +15,17 @@ import serverApi from "./api/server";
         throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`)
       }
 
-      return {
+      /* Extraindo as categorias dos posts para um novo array */
+      const categorias = dados.map( post => post.categoria  )
+      console.log(categorias);
+
+      /* Gerando um array de categorias ÚNICAS */
+      const categoriasUnicas = [...new Set(categorias)];
+
+      return { 
         props: {
           posts: dados,
+          categorias: categoriasUnicas
         },
       }
     } catch (error) {
@@ -28,7 +36,8 @@ import serverApi from "./api/server";
     }
   }
 
-export default function Home({posts}) {
+export default function Home({posts, categorias}) {
+  console.log(categorias);
   const [listaDePosts, setListaDePosts] = useState(posts);
 
   return (
