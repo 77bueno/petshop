@@ -35,17 +35,24 @@ import serverApi from "./api/server";
 export default function Home({posts, categorias}) {
   const [listaDePosts, setListaDePosts] = useState(posts);
   const [filtroAtivo, setFiltroAtivo] = useState(false);
+  const [categoriaAtiva, setCategoriaAtiva] = useState("");
  
   const filtrar = (event) => {
     const categoriaEscolhida = event.currentTarget.textContent;
     const novaListaDePosts = posts.filter( post => post.categoria === categoriaEscolhida );
     setFiltroAtivo(true);
     setListaDePosts(novaListaDePosts);
+
+    // Sinalizando o State com o texto/categoria escolhida
+    setCategoriaAtiva(categoriaEscolhida);
   }
   
   const limparFiltro = () => {
     setFiltroAtivo(false);
     setListaDePosts(posts);
+    
+    // Atualizando o State da categoria ativa para vazio ""
+    setCategoriaAtiva("");
   }
 
   return (
@@ -63,7 +70,8 @@ export default function Home({posts, categorias}) {
 
         <StyledCategorias>
           {categorias.map((categoria, indice) => {
-            return <button onClick={filtrar} key={indice}>{categoria}</button> 
+            return <button className={categoria === categoriaAtiva ? "ativo" : "" } 
+            onClick={filtrar} key={indice}>{categoria}</button> 
           })}
           { filtroAtivo && <button onClick={limparFiltro} className="limpar">Limpar Filtro</button>}
         </StyledCategorias>
@@ -89,6 +97,10 @@ const StyledCategorias = styled.div`
     padding: 15px;
     border-radius: 6px;
     text-transform: capitalize;
+
+    &.ativo {
+      background-color: var(--cor-primaria-fundo);
+    }
   }
 
   .limpar {
