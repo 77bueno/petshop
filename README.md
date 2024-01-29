@@ -1,5 +1,9 @@
 # PetShop: projeto Next.js
 
+https://petshop-victor-bueno-2024-default-rtdb.firebaseio.com/
+:
+null
+
 ## Branch 14-usando-rotas-dinâmicas-para-abrir-post
 
 ### Recursos necessários
