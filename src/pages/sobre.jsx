@@ -15,13 +15,19 @@ export default function Sobre() {
 
         <Container>
           <h3>Missão</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam dicta autem fugit, delectus sapiente dolor placeat soluta! Reiciendis incidunt illo delectus culpa quaerat repudiandae est, quisquam ut molestiae debitis. Quia!</p>
+          <p>O PetShop PetAmigo tem como missão oferecer aos nossos clientes e seus queridos pets uma experiência única e completa, proporcionando produtos e serviços de alta qualidade que promovam o bem-estar, saúde e felicidade dos animais de estimação. Buscamos ser mais do que um estabelecimento comercial; aspiramos a ser um verdadeiro parceiro na jornada de cuidado e amor pelos animais, promovendo uma convivência saudável e afetuosa entre tutores e seus companheiros de quatro patas.</p>
 
           <h3>Visão</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cupiditate, nisi accusantium eos dolor corporis error dolorum, repellendus itaque distinctio ipsam illum quas quis repudiandae doloribus mollitia reprehenderit repellat velit. Mollitia? Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores tenetur blanditiis pariatur officia quod qui minima deleniti, expedita sapiente laborum repellat vitae ullam labore maxime veritatis, beatae eligendi possimus rerum.</p>
+          <p>Nossa visão é ser reconhecido como o PetShop referência em excelência e inovação, estabelecendo padrões elevados no atendimento ao cliente, na diversidade de produtos de qualidade e na prestação de serviços especializados. Almejamos ser um ponto de encontro para entusiastas de animais de estimação, criando uma comunidade que compartilha valores de respeito, responsabilidade e amor pelos animais.</p>
 
           <h3>Valores</h3>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur odio voluptas, reiciendis voluptate ipsum perferendis? </p>
+          <ol>
+            <li><b>Amor pelos Animais</b>: Colocamos o bem-estar e felicidade dos pets no centro de nossas ações, tratando cada animal como se fosse parte da nossa própria família.</li>
+            <li><b>Compromisso com a Qualidade</b>: Buscamos constantemente a excelência em nossos produtos e serviços, selecionando cuidadosamente fornecedores e parceiros comprometidos com os mais altos padrões de qualidade.</li>
+            <li><b>Ética e Transparência</b>: Pautamos nossas ações pela ética, transparência e integridade, mantendo relações honestas com clientes, colaboradores e parceiros.</li>
+            <li><b>Inovação e Sustentabilidade</b>: Buscamos continuamente inovar, incorporando práticas sustentáveis em nossos processos e produtos, contribuindo para um mundo mais verde e responsável.</li>
+            <li><b>Atendimento Personalizado</b>: Valorizamos a relação próxima com nossos clientes, oferecendo um atendimento personalizado que atenda às necessidades específicas de cada pet e de seus tutores.</li>
+          </ol>
         </Container>
       </StyledSobre>
     </>
