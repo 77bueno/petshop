@@ -9,19 +9,42 @@ import ListaCategorias from "@/components/ListaCategorias";
     console.log("Código de servidor (não aparece no cliente)...");
 
     try {
-      const resposta = await fetch(`${serverApi}/posts`);
+      const resposta = await fetch(`${serverApi}/posts.json`);
       const dados = await resposta.json();
+      
 
       if (!resposta.ok) {
         throw new Error(`Erro: ${resposta.status} - ${resposta.statusText}`)
       }
 
-      const categorias = dados.map( post => post.categoria  )
+      /* Colocando os dados dos objetos dentro de um array 
+      
+      1) Object.keys (dados): extrair as chaves/id de cada objeto
+      para um array.
+      
+      2) Map no array de chaves, em que retornamos um novo objeto
+      
+      3) Cada novo objeto (representado por post) é criado
+      os dados existentes (por isso, usamos o spread)
+        
+      4) No caso do id, atribuimos a própria chave de cada objeto.
+      Portanto, em vez de ids numéricos, os ids passam a ser na aplicação o próprio
+      hash/código de cada post. */
+      const arrayDePosts = Object.keys(dados).map(post => {
+        return {
+          ...dados[post], 
+          id: post,
+        }
+      });
+
+      console.log(arrayDePosts);
+
+      const categorias = arrayDePosts.map( post => post.categoria  )
       const categoriasUnicas = [...new Set(categorias)];
 
       return { 
         props: {
-          posts: dados,
+          posts: arrayDePosts,
           categorias: categoriasUnicas
         },
       }
