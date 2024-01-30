@@ -21,7 +21,9 @@ export default function Contato() {
         <h2>Fale conosco</h2>
 
         <Container>
-          <form action="" method="post">
+          <form action="" method="post" onSubmit={handleSubmit(dados => {
+            enviarContato(dados)
+          })}>
             <div>
               <label htmlFor="nome"><b>Nome:</b> </label>
               <input {...register("nome")} type="text" name="nome" id="nome" />
