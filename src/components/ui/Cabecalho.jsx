@@ -57,6 +57,7 @@ const StyledHeader = styled.header`
     div {
         flex-direction: row;
         justify-content: space-between;
+        padding-bottom: 0.1rem;
     }
 
     h1 a {
