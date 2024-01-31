@@ -6,7 +6,7 @@ import serverApi from "./api/server";
 import { useRouter } from "next/router";
 
 export default function Contato() {
-  const { register, handleSubmit } = useForm();
+  const { register, handleSubmit, formState: { errors } } = useForm();
   let router = useRouter();
 
   const enviarContato = async (dados) => {
@@ -40,23 +40,27 @@ export default function Contato() {
         <h2>Fale conosco</h2>
 
         <Container>
-          <form action="" method="post" onSubmit={handleSubmit(dados => {
+          <form action="" method="post" autoComplete="off" onSubmit={handleSubmit(dados => {
             enviarContato(dados)
           })}>
             <div>
               <label htmlFor="nome"><b>Nome:</b> </label>
-              <input {...register("nome")} type="text" name="nome" id="nome" />
+              <input {...register("nome", {required: true})} type="text" name="nome" id="nome" />
             </div>
+
+            {errors.nome?.type == "required" && <p className="errors">Você deve digitar o nome!</p>}
 
             <div>
               <label htmlFor="email"><b>Email:</b> </label>
-              <input {...register("email")} type="text" name="email" id="email" />
+              <input {...register("email", {required: true})} type="email" name="email" id="email" />
             </div>
+
+            {errors.email?.type == "required" && <p className="errors">Você deve digitar o email!</p>}
 
             <div>
               <label htmlFor="mensagem"><b>Mensagem:</b> </label>
               <textarea 
-                {...register("mensagem")}
+                {...register("mensagem", {required: true, minLength: 20})}
                 type="text" 
                 name="mensagem" 
                 id="mensagem" 
@@ -65,6 +69,9 @@ export default function Contato() {
                 maxLength={500}>
               </textarea>
             </div>
+
+            {errors.mensagem?.type == "required" && <p className="errors">Você deve digitar uma mensagem!</p>}
+            {errors.mensagem?.type == "minLength" && <p className="errors">Escreva pelo menos 20 caracteres!</p>}
 
             <div>
               <button type="submit">Enviar mensagem</button>
@@ -79,6 +86,11 @@ export default function Contato() {
 const StyledContato = styled.section`
   h2::before {
     content: "💌 ";
+  }
+
+  .errors {
+    color: red;
+    font-style: italic;
   }
 
   form input, textarea {
