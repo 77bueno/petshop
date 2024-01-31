@@ -22,10 +22,10 @@ const StyledCategorias = styled.div`
     flex-wrap: wrap ;
   button {
     background-color: rgb(75, 163, 195);
-    color: white;
-    font-weight: bold;
+    color: rgb(247, 247, 247);
+    font-family: "Fjalla One", sans-serif;
     border: none;
-    padding: 10px;
+    padding: 8px 16px;
     border-radius: 6px;
     text-transform: capitalize;
 
