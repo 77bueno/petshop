@@ -21,25 +21,29 @@ const StyledCategorias = styled.div`
     margin: 1rem 0;
     flex-wrap: wrap ;
   button {
-    background-color: #181772;
+    background-color: rgb(75, 163, 195);
     color: white;
-    text-shadow: black 1px 1px 1px;
     font-weight: bold;
     border: none;
-    padding: 15px;
+    padding: 10px;
     border-radius: 6px;
     text-transform: capitalize;
 
+    &:hover {
+      background-color: rgb(52, 141, 173);
+      cursor: pointer;
+    }
+
     &.ativo {
-      background-color: var(--cor-primaria-fundo);
+      background-color: darkblue;
     }
   }
 
   .limpar {
-    background-color: gray;
+    background-color: rgb(250 116 144);
 
     &:hover {
-      background-color: slategray;
+      background-color: #ff1a1a;
     }
 
     &::before {
