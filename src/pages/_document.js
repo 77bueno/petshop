@@ -7,6 +7,12 @@ export default function Document() {
       <Head>
         <link rel='shortcut icon' href='/images/favicon.png' type='image/png' sizes='256x256' />
         <meta name='author' content='Victor Bueno' />
+        <link rel="manifest" href="/manifest.json" />
+        <meta name="application-name" content="PetShop" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+        <meta name="apple-mobile-web-app-title" content="PetShop" />
+        <meta name="mobile-web-app-capable" content="yes" />
       </Head>
       <body>
         <Main />
