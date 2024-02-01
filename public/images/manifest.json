@@ -1,0 +1,19 @@
+{
+    "short_name": "PetShop Bueno",
+    "name": "PetShop incrível demais da conta",
+    "description": "Exemplo de uma PWA criada com Next.Js",
+    "icons": [
+      {
+        "src": "images/favicon.png",
+        "type": "image/png",
+        "sizes": "256x256"
+      }
+    ],
+    "start_url": "/",
+    "scope": ".",
+    "display": "standalone",
+    "theme_color": "#000000",
+    "background_color": "#ffffff",
+    "orientation": "any",
+    "lang": "pt-br"
+  }
