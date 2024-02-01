@@ -37,7 +37,6 @@ import ListaCategorias from "@/components/ListaCategorias";
         }
       });
 
-      console.log(arrayDePosts);
 
       const categorias = arrayDePosts.map( post => post.categoria  )
       const categoriasUnicas = [...new Set(categorias)];
